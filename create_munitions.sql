@@ -1,5 +1,5 @@
 CREATE TABLE Munitions(
-	munition_id NUMBER PRIMARY KEY,
+	munition_id NUMBER NOT NULL PRIMARY KEY,
 	m_cost NUMBER,
 	m_name VARCHAR(20)
 );
@@ -63,3 +63,6 @@ INSERT INTO Munitions VALUES(
 	750,
 	'Flak Jackets'
 );
+
+SELECT count(munition_id)
+FROM Munitions;

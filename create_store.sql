@@ -1,5 +1,5 @@
 CREATE TABLE Store(
-	store_id NUMBER PRIMARY KEY,
+	store_id NUMBER NOT NULL PRIMARY KEY,
 	store_name VARCHAR2(30)
 );
 
@@ -52,3 +52,6 @@ INSERT INTO Store VALUES(
 	10,
 	'Amazon'
 );
+
+SELECT count(store_id)
+FROM Store;

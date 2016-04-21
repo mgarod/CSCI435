@@ -1,0 +1,3 @@
+DROP TABLE Muntitions;
+DROP TABLE Store;
+DROP TABLE Player;
