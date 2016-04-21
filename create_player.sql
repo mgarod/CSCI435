@@ -4,7 +4,7 @@ CREATE TABLE Player(
 	lname VARCHAR2(20) NOT NULL,
 	username VARCHAR2(30) NOT NULL UNIQUE,
 	funds NUMBER(20,2),
-	num_wins NUMBER,
+	#num_wins NUMBER,
 	soliders NUMBER,
 	tanks NUMBER,
 	jets NUMBER
@@ -16,7 +16,7 @@ INSERT INTO Player VALUES(
 	'Wahlberg',
 	'mwhalberg87',
 	64000.00,
-	2,
+	#2,
 	50,
 	15,
 	25
@@ -28,7 +28,7 @@ INSERT INTO Player VALUES(
 	'Garod',
 	'mgarod89',
 	90000.00,
-	4,
+	#4,
 	60,
 	30,
 	5
@@ -40,7 +40,7 @@ INSERT INTO Player VALUES(
 	'Katsougrakis',
 	'odykat9000',
 	75000.00,
-	3,
+	#3,
 	20,
 	12,
 	30
@@ -52,7 +52,7 @@ INSERT INTO Player VALUES(
 	'Khallaf',
 	'zkhallaf1234',
 	80000.00,
-	3,
+	#3,
 	20,
 	12,
 	30
@@ -64,7 +64,7 @@ INSERT INTO Player VALUES(
 	'Schwarzenegger',
 	'terminator91',
 	20000.00,
-	1,
+	#1,
 	15,
 	9,
 	4
@@ -76,7 +76,7 @@ INSERT INTO Player VALUES(
 	'Stallone',
 	'ramb0',
 	35000.00,
-	3,
+	#3,
 	42,
 	20,
 	30
@@ -88,7 +88,7 @@ INSERT INTO Player VALUES(
 	'Chan',
 	'superc0p',
 	68000.00,
-	5,
+	#5,
 	75,
 	25,
 	5
@@ -100,7 +100,7 @@ INSERT INTO Player VALUES(
 	'Reeves',
 	'the1',
 	32000.00,
-	2,
+	#2,
 	25,
 	10,
 	8
@@ -112,7 +112,7 @@ INSERT INTO Player VALUES(
 	'Jackson',
 	'the_one_with_BMF_on_it',
 	14000.00,
-	0,
+	#0,
 	7,
 	2,
 	0
@@ -124,7 +124,7 @@ INSERT INTO Player VALUES(
 	'Neeson',
 	'I_have_a_set_of_skills',
 	4000.00,
-	1,
+	#1,
 	7,
 	2,
 	0
