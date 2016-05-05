@@ -6,8 +6,10 @@ CREATE TABLE Attack(
 	victor_id NUMBER NOT NULL,
 	CONSTRAINT fk_attacker FOREIGN KEY (attacker_id)
 		REFERENCES Player (player_id),
+		ON DELETE CASCADE
 	CONSTRAINT fk_defender FOREIGN KEY (defender_id)
 		REFERENCES Player (player_id)
+		ON DELETE CASCADE
 );
 
 INSERT INTO ATTACK VALUES(1001, 1002, 'Croatia',
