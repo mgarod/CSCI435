@@ -1,4 +1,4 @@
 DROP TABLE Munition;
 DROP TABLE Store;
-DROP TABLE Player;
 DROP TABLE Attack;
+DROP TABLE Player;
