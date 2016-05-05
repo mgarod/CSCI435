@@ -129,3 +129,6 @@ INSERT INTO Player VALUES(
 	2,
 	0
 );
+
+SELECT count(player_id)
+FROM Player;

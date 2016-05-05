@@ -1,3 +1,3 @@
-DROP TABLE Muntitions;
+DROP TABLE Munitions;
 DROP TABLE Store;
 DROP TABLE Player;
