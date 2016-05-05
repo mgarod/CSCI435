@@ -5,8 +5,8 @@ CREATE TABLE Attack(
 	time timestamp NOT NULL,
 	victor_id NUMBER NOT NULL,
 	CONSTRAINT fk_attacker FOREIGN KEY (attacker_id)
-		REFERENCES Player (player_id),
-		ON DELETE CASCADE
+		REFERENCES Player (player_id)
+		ON DELETE CASCADE,
 	CONSTRAINT fk_defender FOREIGN KEY (defender_id)
 		REFERENCES Player (player_id)
 		ON DELETE CASCADE
