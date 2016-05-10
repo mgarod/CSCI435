@@ -1,13 +1,24 @@
+-- Questions:
+-- How many times has player X lost?
+-- What is the win rate of player X?
+-- Who is the player with the most wins? Least wins?
+-- What country has player X most often won?
+-- In what month did the most attacks take place?
+
 CREATE TABLE Attack(
 	attacker_id NUMBER NOT NULL,
 	defender_id NUMBER NOT NULL,
+	time timestamp(0) NOT NULL,
 	location VARCHAR2(30),
-	time timestamp NOT NULL,
 	victor_id NUMBER NOT NULL,
-	CONSTRAINT fk_attacker FOREIGN KEY (attacker_id)
+	CONSTRAINT pk_attack
+		PRIMARY KEY (attacker_id, defender_id, time),
+	CONSTRAINT fk_attacker
+		FOREIGN KEY (attacker_id)
 		REFERENCES Player (player_id)
 		ON DELETE CASCADE,
-	CONSTRAINT fk_defender FOREIGN KEY (defender_id)
+	CONSTRAINT fk_defender
+		FOREIGN KEY (defender_id)
 		REFERENCES Player (player_id)
 		ON DELETE CASCADE
 );
