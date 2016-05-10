@@ -15,7 +15,7 @@ def get_q():
 
 for i in d.Players:
 	for j in range(r.randint(15,30)):
-		print """INSERT INTO SUPPLYDROP VALUES({0}, {1}, {2},\n\tTO_TIMESTAMP({2},\'YYYY-MM-DD HH24:MI:SS\'), {3}, {4});""".format(i, d.get_sid(), d.get_mid(), d.make_date(), get_q())
+		print """INSERT INTO SUPPLYDROP VALUES({0}, {1}, {2},\n\tTO_TIMESTAMP({3},\'YYYY-MM-DD HH24:MI:SS\'), {4});""".format(i, d.get_sid(), d.get_mid(), d.make_date(), get_q())
 
 
 
