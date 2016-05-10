@@ -4,7 +4,7 @@ CREATE TABLE Player(
 	lname VARCHAR2(20) NOT NULL,
 	username VARCHAR2(30) NOT NULL UNIQUE,
 	funds NUMBER(20,2),
-	soliders NUMBER,
+	soldiers NUMBER,
 	tanks NUMBER,
 	jets NUMBER,
 	allied_with NUMBER
