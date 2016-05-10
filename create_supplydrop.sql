@@ -4,6 +4,7 @@ CREATE TABLE SupplyDrop(
 	m_id NUMBER NOT NULL,
 	order_time timestamp(0) NOT NULL,
 	quantity NUMBER NOT NULL,
+	CONSTRAINT pk_supplydrop PRIMARY KEY (p_id, s_id, m_id, order_time),
 	CONSTRAINT fk_pid FOREIGN KEY (p_id)
 		REFERENCES Player (player_id)
 		ON DELETE CASCADE,
