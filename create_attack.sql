@@ -4,6 +4,7 @@
 -- Who is the player with the most wins? Least wins?
 -- What country has player X most often won?
 -- In what month did the most attacks take place?
+-- How many times Player X and Player Y have fought if so Where was the battle?
 
 CREATE TABLE Attack(
 	attacker_id NUMBER NOT NULL,
