@@ -1,7 +1,7 @@
 CREATE TABLE Alliance(
 	alliance_id NUMBER NOT NULL PRIMARY KEY,
 	a_location VARCHAR2(30),
-	a_name VARCHAR2(30),
+	a_name VARCHAR2(30)
 );
 
 INSERT INTO Alliance VALUES(10001, 'South Africa', 'AllianceName_1');
