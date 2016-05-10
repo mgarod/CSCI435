@@ -8,8 +8,8 @@
 CREATE TABLE Attack(
 	attacker_id NUMBER NOT NULL,
 	defender_id NUMBER NOT NULL,
-	time timestamp(0) NOT NULL,
 	location VARCHAR2(30),
+	time timestamp(0) NOT NULL,
 	victor_id NUMBER NOT NULL,
 	CONSTRAINT pk_attack
 		PRIMARY KEY (attacker_id, defender_id, time),
