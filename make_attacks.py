@@ -33,4 +33,4 @@ def make_date():
 for i in Players:
 	for j in range(r.randint(8,15)):
 		other = get_other_player(i)
-		print """INSERT INTO ATTACK VALUES({0}, {1}, {2},\n\t TO_TIMESTAMP({3}, \'YYYY-MM-DD HH24:MI:SS\'), {4});""".format(i, other, get_loc(), make_date(), r.choice([i, other]))
+		print """INSERT INTO ATTACK VALUES({0}, {1},\n\tTO_TIMESTAMP({2},\'YYYY-MM-DD HH24:MI:SS\'),\n\t{3}, {4});""".format(i, other, make_date(), get_loc(), r.choice([i, other]))
