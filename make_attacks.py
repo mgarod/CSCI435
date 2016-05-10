@@ -25,8 +25,8 @@ def make_date():
 	mon = str(r.choice(range(1,13)))
 	day = str(r.choice(range(1,28)))
 	hr = str(r.choice(range(0,24)))
-	m = str(r.choice(range(0,61)))
-	sec = str(r.choice(range(0,61)))
+	m = str(r.choice(range(0,60)))
+	sec = str(r.choice(range(0,60)))
 	return "\'2015-"+mon+"-"+day+" "+hr+":"+m+":"+sec+"\'"
 
 
