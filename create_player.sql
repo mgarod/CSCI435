@@ -6,7 +6,8 @@ CREATE TABLE Player(
 	funds NUMBER(20,2),
 	soliders NUMBER,
 	tanks NUMBER,
-	jets NUMBER
+	jets NUMBER,
+	allied_with NUMBER
 );
 
 INSERT INTO Player VALUES(
@@ -18,6 +19,7 @@ INSERT INTO Player VALUES(
 	50,
 	15,
 	25
+	10001
 );
 
 INSERT INTO Player VALUES(
@@ -28,7 +30,8 @@ INSERT INTO Player VALUES(
 	90000.00,
 	60,
 	30,
-	5
+	5,
+	10002
 );
 
 INSERT INTO Player VALUES(
@@ -39,7 +42,8 @@ INSERT INTO Player VALUES(
 	75000.00,
 	20,
 	12,
-	30
+	30,
+	10003
 );
 
 INSERT INTO Player VALUES(
@@ -50,7 +54,8 @@ INSERT INTO Player VALUES(
 	80000.00,
 	20,
 	12,
-	30
+	30,
+	10004
 );
 
 INSERT INTO Player VALUES(
@@ -61,7 +66,8 @@ INSERT INTO Player VALUES(
 	20000.00,
 	15,
 	9,
-	4
+	4,
+	10005
 );
 
 INSERT INTO Player VALUES(
@@ -72,7 +78,8 @@ INSERT INTO Player VALUES(
 	35000.00,
 	42,
 	20,
-	30
+	30,
+	10006
 );
 
 INSERT INTO Player VALUES(
@@ -83,7 +90,8 @@ INSERT INTO Player VALUES(
 	68000.00,
 	75,
 	25,
-	5
+	5,
+	10007
 );
 
 INSERT INTO Player VALUES(
@@ -94,7 +102,8 @@ INSERT INTO Player VALUES(
 	32000.00,
 	25,
 	10,
-	8
+	8,
+	10008
 );
 
 INSERT INTO Player VALUES(
@@ -105,7 +114,8 @@ INSERT INTO Player VALUES(
 	14000.00,
 	7,
 	2,
-	0
+	0,
+	10009
 );
 
 INSERT INTO Player VALUES(
@@ -116,7 +126,8 @@ INSERT INTO Player VALUES(
 	4000.00,
 	7,
 	2,
-	0
+	0,
+	10010
 );
 
 --SELECT count(player_id)
