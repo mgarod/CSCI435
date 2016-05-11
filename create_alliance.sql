@@ -4,7 +4,7 @@ CREATE TABLE Alliance(
 	a_name VARCHAR2(30) NOT NULL,
 	CONSTRAINT fk_alliance_loc
 		FOREIGN KEY (a_location)
-		REFERENCES Location (location_id)
+		REFERENCES GameLocation (location_id)
 		ON DELETE SET NULL
 );
 

@@ -4,7 +4,7 @@ CREATE TABLE Store(
 	store_loc NUMBER NOT NULL,
 	CONSTRAINT fk_sloc
 		FOREIGN KEY (store_loc)
-		REFERENCES Location (location_id)
+		REFERENCES GameLocation (location_id)
 		ON DELETE CASCADE
 );
 
