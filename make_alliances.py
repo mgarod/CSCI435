@@ -8,4 +8,4 @@ CREATE TABLE Alliance(
 import data as d
 
 for i, v in enumerate(range(10001, 10020 + 1)):
-	print """INSERT INTO Alliance VALUES({}, {}, {});""".format(v, d.get_hloc(), "\'AllianceName_"+str(i+1)+"\'")
+	print """INSERT INTO Alliance VALUES({}, {}, {});""".format(v, d.get_hloc_id(), "\'AllianceName_"+str(i+1)+"\'")

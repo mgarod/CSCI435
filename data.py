@@ -71,7 +71,7 @@ def get_anyloc():
 	return "\'"+r.choice(AllLocations)+"\'"
 
 def get_wloc_id():
-	return r.choice(Locations[:len(WarLocation))])
+	return r.choice(Locations[:len(WarLocation)])
 
 def get_hloc_id():
 	return r.choice(Locations[len(WarLocation):])
