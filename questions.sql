@@ -26,8 +26,6 @@ WHERE victor_id=1009
 GROUP BY location
 ORDER BY num_wins DESC;
 
--- In what month did the most attacks take place?
-
 -- How many times Player X and Player Y have fought?
 SELECT COUNT(*)
 FROM ATTACK
@@ -50,7 +48,6 @@ FROM (SELECT location, COUNT(location) AS Frequency
 	ORDER BY COUNT(location) DESC)
 WHERE rownum <= 10;
 
--- What is the most bloody battle and what is the most used munition used ?
 -- What's the name of the Player that orders the most grenades?
 SELECT p.fname, p.lname
 FROM Player p
@@ -58,11 +55,6 @@ INNER JOIN SupplyDrop sd
 	ON p.player_id=sd.p_id
 INNER JOIN Store s
 	ON s.store_id=sd.s_id;
-
-SELECT munition_id
-FROM Munition
-
--- What is the player who ordered more munition than his opponent and yet lost the battle ? 
 
 -- What are the names of the players who have alliances in Australia?
 SELECT p.fname, p.lname FROM player p INNER JOIN alliance a ON p.allied_with = a.alliance_id WHERE a.a_location='Australia';
