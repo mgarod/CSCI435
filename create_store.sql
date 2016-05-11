@@ -1,7 +1,7 @@
 CREATE TABLE Store(
 	store_id NUMBER NOT NULL PRIMARY KEY,
 	store_name VARCHAR2(30) NOT NULL,
-	store_loc NUMBER NOT NULL
+	store_loc NUMBER NOT NULL,
 	CONSTRAINT fk_sloc
 		FOREIGN KEY (store_loc)
 		REFERENCES Location (location_id)
