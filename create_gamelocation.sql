@@ -1,6 +1,6 @@
 CREATE TABLE GameLocation(
 	location_id NUMBER NOT NULL PRIMARY KEY,
-	l_name VARCHAR(20) NOT NULL UNIQUE
+	loc_name VARCHAR(20) NOT NULL UNIQUE
 );
 
 INSERT INTO GameLocation VALUES(501, 'Ukraine');
