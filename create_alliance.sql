@@ -1,7 +1,11 @@
 CREATE TABLE Alliance(
 	alliance_id NUMBER NOT NULL PRIMARY KEY,
-	a_location NUMBER,
-	a_name VARCHAR2(30)
+	a_location NUMBER NOT NULL,
+	a_name VARCHAR2(30) NOT NULL
+	CONSTRAINT fk_alliance_loc
+		FOREIGN KEY (a_location)
+		REFERENCES Location (location_id)
+		ON DELETE SET NULL,
 );
 
 INSERT INTO Alliance VALUES(10001, 538, 'AllianceName_1');

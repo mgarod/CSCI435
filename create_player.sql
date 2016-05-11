@@ -30,6 +30,3 @@ INSERT INTO Player VALUES(1009, 'Samuel', 'Jackson', 'the_one_with_BMF_on_it',
 	14000.00, 7, 6, 0, 10009);
 INSERT INTO Player VALUES(1010, 'Liam', 'Neeson', 'I_have_a_set_of_skills',
 	4000.00, 11, 0, 3, 10010);
-
---SELECT count(player_id)
---FROM Player;

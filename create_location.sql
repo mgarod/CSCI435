@@ -1,5 +1,5 @@
 CREATE TABLE Location(
-	loction_id NUMBER NOT NULL PRIMARY KEY,
+	location_id NUMBER NOT NULL PRIMARY KEY,
 	l_name VARCHAR(20) NOT NULL UNIQUE
 );
 
