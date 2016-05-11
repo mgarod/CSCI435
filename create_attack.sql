@@ -13,6 +13,10 @@ CREATE TABLE Attack(
 	CONSTRAINT fk_defender
 		FOREIGN KEY (defender_id)
 		REFERENCES Player (player_id)
+		ON DELETE SET NULL,
+	CONSTRAINT fk_loc_id
+		FOREIGN KEY (loc_id)
+		REFERENCES GameLocation (location_id)
 		ON DELETE SET NULL
 );
 
