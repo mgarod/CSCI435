@@ -1,3 +1,4 @@
+DROP TABLE Location;
 DROP TABLE SupplyDrop;
 DROP TABLE Attack;
 DROP TABLE Munition;

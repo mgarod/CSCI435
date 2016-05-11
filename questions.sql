@@ -49,7 +49,17 @@ FROM (SELECT location, COUNT(location) AS Frequency
 WHERE rownum <= 10;
 
 -- What is the most bloody battle and what is the most used munition used ?
--- What's the name of the Player that orders the most grenades and when ?
+-- What's the name of the Player that orders the most grenades?
+SELECT p.fname, p.lname
+FROM Player p
+INNER JOIN SupplyDrop sd
+	ON p.player_id=sd.p_id
+INNER JOIN Store s
+	ON s.store_id=sd.s_id;
+
+SELECT munition_id
+FROM Munition
+
 -- What is the player who ordered more munition than his opponent and yet lost the battle ? 
 
 -- What are the names of the players who have alliances in Australia?

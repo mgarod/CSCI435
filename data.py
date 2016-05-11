@@ -1,15 +1,11 @@
 import random as r
 
-Players = range(1001, 1010 + 1)
-Stores = range(11, 20 + 1)
-Munitions = range(101, 110 + 1)
-
 WarLocation = [
 	"Ukraine", "Croatia", "Nigeria",
 	"Laos", "Nicaragua", "Colombia",
 	"Turkey", "Russia", "North Korea",
 	"Madagascar", "Afghanistan", "Libya",
-	"Egypt", "Venezuela", "Mexico",
+	"Egypt", "Venezuela", "Angola",
 	"Armenia", "Azerbaijan", "Indonesia",
 	"Philippines", "Taiwan", "Somalia"
 ]
@@ -23,6 +19,12 @@ HomeLocation = [
 	"Israel", "India", "South Korea"
 ]
 
+AllLocations = WarLocation + HomeLocation
+
+Players = range(1001, 1010 + 1)
+Stores = range(11, 20 + 1)
+Munitions = range(101, 110 + 1)
+Locations = range(501, 501+len(AllLocations))
 
 def get_sid():
 	return r.choice(Stores)
@@ -63,3 +65,16 @@ def get_wloc():
 
 def get_hloc():
 	return "\'"+r.choice(HomeLocation)+"\'"
+
+
+def get_anyloc():
+	return "\'"+r.choice(AllLocations)+"\'"
+
+def get_wloc_id():
+	return r.choice(Locations[:len(WarLocation))])
+
+def get_hloc_id():
+	return r.choice(Locations[len(WarLocation):])
+
+def get_anyloc_id():
+	return r.choice(Locations)
