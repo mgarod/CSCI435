@@ -9,11 +9,11 @@ CREATE TABLE Attack(
 	CONSTRAINT fk_attacker
 		FOREIGN KEY (attacker_id)
 		REFERENCES Player (player_id)
-		ON DELETE CASCADE,
+		ON DELETE SET NULL,
 	CONSTRAINT fk_defender
 		FOREIGN KEY (defender_id)
 		REFERENCES Player (player_id)
-		ON DELETE CASCADE
+		ON DELETE SET NULL
 );
 
 INSERT INTO ATTACK VALUES(1001, 1007,
