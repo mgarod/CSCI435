@@ -1,4 +1,4 @@
-DROP TABLE Location;
+DROP TABLE GameLocation;
 DROP TABLE SupplyDrop;
 DROP TABLE Attack;
 DROP TABLE Munition;

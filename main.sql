@@ -1,4 +1,4 @@
-@create_location.sql
+@create_gamelocation.sql
 @create_munition.sql
 @create_player.sql
 @create_store.sql
