@@ -128,27 +128,31 @@ FROM (SELECT EXTRACT(MONTH FROM time) month
 GROUP BY month
 ORDER BY num_attacks DESC;
 
+-- Which alliance has the most number of wins
+SELECT a_name Alliance, SUM(wins)
+FROM (SELECT victor_id, COUNT(victor_id) wins
+	FROM Attack
+	GROUP BY victor_id) v
+INNER JOIN Player p
+	ON p.player_id=v.victor_id
+INNER JOIN Alliance a
+	ON p.allied_with=a.alliance_id
+GROUP BY a_name;
 
+-- Number of times Keanu Reeves and Samuel Jackson
+SELECT COUNT(*)
+FROM Attack
+WHERE 
+	(attacker_id=(SELECT player_id FROM player WHERE fname='Keanu')
+	AND defender_id=(SELECT player_id FROM player WHERE fname='Samuel'))
+	OR (attacker_id=(SELECT player_id FROM player WHERE fname='Samuel')
+	AND defender_id=(SELECT player_id FROM player WHERE fname='Keanu'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- How many players have ordered an AK-47?
+SELECT COUNT(*)
+FROM (SELECT DISTINCT player_id
+	FROM Player p
+	INNER JOIN SupplyDrop sd
+		ON p.player_id=sd.p_id
+	INNER JOIN Munition m
+		ON sd.m_id=m.munition_id AND m.m_name='AK-47');
