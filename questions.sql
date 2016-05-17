@@ -82,7 +82,7 @@ INNER JOIN GameLocation gl
 	ON a.a_location=gl.location_id AND gl.loc_name='Australia';
 
 -- What is the win rate of each every player?
-SELECT p.fname, p.lname, win_pid, num_wins/num_battles * 100
+SELECT p.fname, p.lname, win_pid, (num_wins/num_battles * 100) WinRate
 FROM
 	(
 		SELECT victor_id win_pid, COUNT(victor_id) num_wins
@@ -110,7 +110,8 @@ INNER JOIN
 	)
 	ON win_pid=all_pid
 INNER JOIN Player p
-	on win_pid=p.player_id;
+	on win_pid=p.player_id
+ORDER BY WinRate DESC;
 
 -- What is the most that each player has spent on a single order?
 SELECT p.fname, p.lname, Max(m.m_cost*sd.quantity) TotalCost
