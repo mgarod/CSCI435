@@ -26,14 +26,6 @@ INNER JOIN GameLocation gl
 	ON a.loc_id=gl.location_id AND loc_name='Croatia';
 
 -- Who are the players with the most wins?
-SELECT p.fname, p.lname, COUNT(victor_id) num_wins
-FROM Attack a
-INNER JOIN Player p
-	ON a.victor_id=p.player_id
-GROUP BY p.fname, p.lname, a.victor_id
-ORDER BY num_wins DESC;
-
--- Who are the players with the most wins?
 SELECT player_id, fname, lname, COUNT(a.victor_id) Wins
 FROM Player p
 INNER JOIN Attack a
@@ -119,3 +111,44 @@ INNER JOIN
 	ON win_pid=all_pid
 INNER JOIN Player p
 	on win_pid=p.player_id;
+
+-- What is the most that each player has spent on a single order?
+SELECT p.fname, p.lname, Max(m.m_cost*sd.quantity) TotalCost
+FROM Player p
+INNER JOIN SupplyDrop sd
+	ON p.player_id=sd.p_id
+INNER JOIN Munition m
+	ON sd.m_id=m.munition_id
+GROUP BY p.fname, p.lname
+
+-- In which month did the most attacks take place?
+SELECT TO_CHAR(TO_DATE(month, 'MM'), 'MONTH') Month, COUNT(month) num_attacks
+FROM (SELECT EXTRACT(MONTH FROM time) month
+	FROM Attack)
+GROUP BY month
+ORDER BY num_attacks DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
