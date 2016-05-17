@@ -61,10 +61,6 @@ WHERE p.fname='Liam' AND p.lname='Neeson'
 GROUP BY p.fname, p.lname, gl.loc_name
 ORDER BY num_wins DESC;
 
--- How many times Player X and Player Y have fought?
-
--- Where have player X and player Y battled?
-
 -- Which countries have seen the most number of battles?
 SELECT loc_name Location, battles.Frequency
 FROM (SELECT loc_id, COUNT(loc_id) AS Frequency
@@ -92,3 +88,34 @@ INNER JOIN alliance a
 	ON p.allied_with = a.alliance_id
 INNER JOIN GameLocation gl
 	ON a.a_location=gl.location_id AND gl.loc_name='Australia';
+
+-- What is the win rate of each every player?
+SELECT p.fname, p.lname, win_pid, num_wins/num_battles * 100
+FROM
+	(
+		SELECT victor_id win_pid, COUNT(victor_id) num_wins
+		FROM Attack
+		GROUP BY victor_id
+	)
+INNER JOIN
+	(
+		SELECT attacker_id all_pid, num_a+num_d num_battles
+		FROM
+		(
+			SELECT attacker_id, COUNT(attacker_id) num_a
+			FROM Attack
+			GROUP BY attacker_id
+			ORDER BY attacker_id
+		) a
+		INNER JOIN
+		(
+			SELECT defender_id, COUNT(defender_id) num_d
+			FROM Attack
+			GROUP BY defender_id
+			ORDER BY defender_id
+		) d
+			ON a.attacker_id=d.defender_id
+	)
+	ON win_pid=all_pid
+INNER JOIN Player p
+	on win_pid=p.player_id;
