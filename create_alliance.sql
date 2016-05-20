@@ -5,7 +5,7 @@ CREATE TABLE Alliance(
 	CONSTRAINT fk_alliance_loc
 		FOREIGN KEY (a_location)
 		REFERENCES GameLocation (location_id)
-		ON DELETE SET NULL
+		ON DELETE CASCADE
 );
 
 INSERT INTO Alliance VALUES(10001, 538, 'AllianceName_1');

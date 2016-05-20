@@ -5,7 +5,7 @@ CREATE TABLE Store(
 	CONSTRAINT fk_sloc
 		FOREIGN KEY (store_loc)
 		REFERENCES GameLocation (location_id)
-		ON DELETE SET NULL
+		ON DELETE CASCADE
 );
 
 INSERT INTO Store VALUES(11, 'Walmart', 522);
